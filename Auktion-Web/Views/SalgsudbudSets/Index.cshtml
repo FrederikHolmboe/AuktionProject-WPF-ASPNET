@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AuktionsEntity.Model.SalgsudbudSet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maengde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tidsfrist)
+        </th>
+        <th>
+            @Html.DisplayName("Highest bid")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maengde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tidsfristen)
+        </td>
+        <td>
+            
+            @Html.DisplayFor(modelItem => item.HighestBidder)
+        </td>
+        <td>
+            @Html.ActionLink("Lav Tilbud", "Create", "KoebstilbudSets", new { email = ViewBag.emailen, id = item.SalgsudbudId }, htmlAttributes: null)
+        </td>
+    </tr>
+}
+
+</table>

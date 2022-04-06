@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Login Side";
+}
+
+<h1>Login side</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<form>
+    <hr />
+    <h4>Login</h4>
+
+    <div class="form-group row">
+        <label for="colFormlabelEmail" class="col-sm-2 col-form-label">Navn:</label>
+        <div class="col-sm-10">
+            <input name="navn" class="form-control" id="colFormlabelEmail" type="text" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="colFormlabelPass" class="col-sm-2 col-form-label">Telefon:</label>
+        <div class="col-sm-10">
+            <input name="tlf" class="form-control" id="colFormlabelPass" type="text"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="colFormlabelPass" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+            <input name="email" class="form-control" id="colFormlabelPass" type="email" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-10">
+            <input type="submit" value="Login/Create" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>
+
+}
